@@ -8,7 +8,7 @@
 TODO - simple TODO list creator
 
 ## Project Description
-This is final project for Course "Fundamentals of Computer Science and Programming". Technologies used for project are HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, Jinja, Flask, Python and SQL. 
+This is final project for Course "Fundamentals of Computer Science and Programming". Technologies used for project are HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, Jinja, Flask, Python and SQL
 
 The functionalities include:
 1. Adding, editing, deleting items in the list
@@ -22,6 +22,4 @@ The functionalities include:
 pip3 install flask flask-sqlalchemy gunicorn
 python3 app.py
 ```
-3. Navigato to http://127.0.0.1:5000/ 
-## Additional Libraries
-No additional libraries are required for this project.
+3. Navigate to http://127.0.0.1:5000/ 
