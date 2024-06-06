@@ -8,7 +8,9 @@
 TODO - simple TODO list creator
 
 ## Project Description
-This is final project Technologies used HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, Jinja, Flask, Python and SQL. The functionalities include:
+This is final project for Course "Fundamentals of Computer Science and Programming". Technologies used for project are HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, Jinja, Flask, Python and SQL. 
+
+The functionalities include:
 1. Adding, editing, deleting items in the list
 2. Changing status for item added
 3. Setting cookies
