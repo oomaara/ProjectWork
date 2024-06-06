@@ -1,5 +1,8 @@
+# These functions are started from app.py
+
 import sqlite3
 
+# reads database and selects all tasks
 def fetch_todo():
     conn = sqlite3.connect('./db/database.db')
     query_results = conn.execute("Select * from tasks;").fetchall()
@@ -14,6 +17,7 @@ def fetch_todo():
         todo_list.append(item)
     return todo_list
 
+# connects to database and updates tasks
 def update_task_entry(task_id, text):
     conn = sqlite3.connect('./db/database.db')
     c = conn.cursor()
@@ -21,6 +25,7 @@ def update_task_entry(task_id, text):
     conn.commit()
     conn.close()
 
+# Connects to database and updates status
 def update_status_entry(task_id, text):
     conn = sqlite3.connect('./db/database.db')
     c = conn.cursor()
@@ -28,6 +33,7 @@ def update_status_entry(task_id, text):
     conn.commit()
     conn.close()
 
+# Connects to database and creates new task
 def insert_new_task(text):
     conn = sqlite3.connect('./db/database.db')
     query = 'Insert Into tasks (name, status) VALUES ("{}", "{}");'.format(
@@ -42,6 +48,7 @@ def insert_new_task(text):
 
     return task_id
 
+# Deletes task
 def remove_task_by_id(task_id):
     """ remove entries based on task ID """
     conn = sqlite3.connect('./db/database.db')

@@ -13,17 +13,8 @@
     </style>
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ url_for('home') }}">TODO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about_me') }}">About me</a></li>
-                </ul>
-            </div>
-        </nav>   
+       <!-- Including navbar code dynamicaly with jinja -->
+    {% include "navbar.html"%}
         <div class="container">
 
             <!-- Adding task button-->
@@ -74,6 +65,7 @@
                 </tr>
                 </thead>
 
+                <!-- Jinja receives task items from flask and loops through them -->
                 <tbody>
                     {% for task in taskItems %}
                     <tr>
@@ -101,11 +93,13 @@
                                                                 type="button"><i class="fa fa-trash fa-1" aria-hidden="true"></i>
                                                 </button></td>
                     </tr>
-                    {% endfor %}             
+                    <!-- Jinja ends -->
+                    {% endfor %}         
                 </tbody>
             </table>
             </div>
         </div>
+        <!-- Adding cookie consent (that actually saves cookie on browser's local storage ;) logic is in cookies.js -->
         <div id="hide-cookies" style="display: none;">
         <div class="d-flex justify-content-center mt-5 h-100">
             <div class="d-flex align-items-center align-self-center card p-3 text-center cookies"><span class="mt-2">We use third party cookies to personalize content, ads and analyze site traffic.</span><i class="fa fa-angle-right ml-2"></i></a>

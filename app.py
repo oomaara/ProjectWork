@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, jsonify #importing needed lybraries
 import sqlite3
 import database
-
-
-#### BETTER TO MOVE TO DEDICATED INIT FILE 
+ 
+# Creating initial database schema 
 # Database connection
 conn = sqlite3.connect('./db/database.db')
 c = conn.cursor()
@@ -17,7 +16,6 @@ c.execute('''CREATE TABLE IF NOT EXISTS tasks(
 # c.execute('''INSERT INTO tasks (name, status) VALUES ("task no.1" , "Todo");''')
 conn.commit()
 conn.close()
-####################################################
 
 app = Flask(__name__) #initializing app
 

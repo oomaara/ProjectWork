@@ -1,3 +1,5 @@
+// Cookies are saved on browsers local storage
+
 $(document).ready(function() {
     // Check local storage for consent status
     if (localStorage.getItem('cookiesAccepted') !== 'true') {

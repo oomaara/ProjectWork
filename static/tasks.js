@@ -1,3 +1,4 @@
+// execute when page is fully loaded
 $(document).ready(function(){
 
     $('#task-modal').on('show.bs.modal', function (event) {
@@ -5,6 +6,7 @@ $(document).ready(function(){
         const taskID = button.data('source'); // Extract info from data-* attributes
         const content = button.data('content'); // Extract info from data-* attributes
 
+        // responsible for determining task data
         const modal = $(this);
         if (taskID === 'New Task') {
             modal.find('.modal-title').text(taskID);
@@ -21,9 +23,11 @@ $(document).ready(function(){
         }
     })
 
+    // Listens on click event and submits new task
     $('#submit-task').click(function () {
         const tID = $('#task-form-display').attr('taskID');
         console.log($('#task-modal').find('.form-control').val());
+        // Ajax's part - uses post and determines end point and sends to server
         $.ajax({
             type: 'POST',
             url: tID ? '/edit/' + tID : '/create',
@@ -41,6 +45,7 @@ $(document).ready(function(){
         });
     });
 
+    // Listents to click when tasks are deleted
     $('.remove').click(function () {
         const remove = $(this);
         $.ajax({
@@ -56,6 +61,7 @@ $(document).ready(function(){
         });
     });
 
+    // Listens on the state changes
     $('.state').click(function () {
         const state = $(this);
         const tID = state.data('source');
@@ -68,6 +74,7 @@ $(document).ready(function(){
             new_state = "In Progress";
         }
 
+        // Ajax's part - uses post and determines end point, sends to server
         $.ajax({
             type: 'POST',
             url: '/edit/' + tID,
